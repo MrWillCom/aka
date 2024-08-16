@@ -13,12 +13,7 @@ app.get('/', c => {
 })
 
 userConfig.redirects.forEach(r => {
-  app.all(r.from, c => {
-    c.status(r.permanent ? 301 : 302)
-    c.header('Location', r.to)
-
-    return c.body('Redirecting...')
-  })
+  app.all(r.from, c => c.redirect(r.to, r.permanent ? 301 : undefined))
 })
 
 export default handle(app)
