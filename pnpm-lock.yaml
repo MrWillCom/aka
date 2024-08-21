@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       hono:
-        specifier: ^4.5.5
-        version: 4.5.5
+        specifier: ^4.5.7
+        version: 4.5.7
     devDependencies:
       prettier:
         specifier: 3.3.3
@@ -956,10 +956,10 @@ packages:
         integrity: sha512-8Rf9Y83NBReMnx0gFzA8JImQACstCYWUplepDa9xprwwtmgEZUF0h/i5xSA625zB/I37EtrswSST6OXxwaaIJQ==,
       }
 
-  hono@4.5.5:
+  hono@4.5.7:
     resolution:
       {
-        integrity: sha512-fXBXHqaVfimWofbelLXci8pZyIwBMkDIwCa4OwZvK+xVbEyYLELVP4DfbGaj1aEM6ZY3hHgs4qLvCO2ChkhgQw==,
+        integrity: sha512-7GeBa+zuZ6rXQEcsYvoAafLNgDr3IMxoMlU1JUc23Buy99FaUpjB0viKIFOsfnzMdEp7RhPL6uLYsVuddjdMvw==,
       }
     engines: { node: '>=16.0.0' }
 
@@ -2462,7 +2462,7 @@ snapshots:
 
   has-unicode@2.0.1: {}
 
-  hono@4.5.5: {}
+  hono@4.5.7: {}
 
   http-errors@1.4.0:
     dependencies:
