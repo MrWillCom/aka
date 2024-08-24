@@ -8,6 +8,14 @@ const config = {
       from: '/c',
       to: 'https://github.com/MrWillCom/hexo-theme-cupertino',
     },
+    {
+      from: '/nmg',
+      to: 'https://github.com/MrWillCom/next-mastodon-gallery',
+    },
+    {
+      from: '/ghtrend',
+      to: 'https://newsmast.social/@ghtrend',
+    },
   ],
 }
 
