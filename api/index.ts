@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import Redis from '@upstash/redis'
+import { Redis } from '@upstash/redis'
 import userConfig from '../config'
 
 export const config = {
