@@ -56,8 +56,12 @@ app.get('/', c => {
 
 userConfig.redirects.forEach(r => {
   app.all(r.from, async c => {
-    const redis = Redis.fromEnv()
-    await redis.lpush(r.from, Date.now())
+    try {
+      const redis = Redis.fromEnv()
+      await redis.lpush(r.from, Date.now())
+    } catch (error) {
+      console.error(error)
+    }
 
     return c.redirect(r.to, r.permanent ? 301 : undefined)
   })
