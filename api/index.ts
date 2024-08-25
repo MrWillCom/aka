@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
+import Redis from '@upstash/redis'
 import userConfig from '../config'
 
 export const config = {
@@ -54,7 +55,12 @@ app.get('/', c => {
 })
 
 userConfig.redirects.forEach(r => {
-  app.all(r.from, c => c.redirect(r.to, r.permanent ? 301 : undefined))
+  app.all(r.from, async c => {
+    const redis = Redis.fromEnv()
+    await redis.lpush(r.from, Date.now())
+
+    return c.redirect(r.to, r.permanent ? 301 : undefined)
+  })
 })
 
 export default handle(app)
