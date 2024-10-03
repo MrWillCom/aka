@@ -2,7 +2,7 @@ const config = {
   redirects: [
     {
       from: '/giclee',
-      to: 'https://blog.mrwillcom.com/2024/09/08/DAC-Giclee-Photography-Output/',
+      to: 'https://blog.mrwillcom.com/2024/10/03/DAC-Giclee-Photography-Output/',
     },
     {
       from: '/messy-math',
