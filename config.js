@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/2024a2z',
+      to: 'https://blog.mrwillcom.com/2025/03/04/2024-browser-from-a-to-z/',
+    },
+    {
       from: '/giclee',
       to: 'https://blog.mrwillcom.com/2024/10/03/DAC-Giclee-Photography-Output/',
     },
