@@ -11,6 +11,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.18.1
         version: 1.18.1(hono@4.9.0)
+      '@openpanel/sdk':
+        specifier: ^1.0.0
+        version: 1.0.0
       dotenv:
         specifier: ^17.2.1
         version: 17.2.1
@@ -195,6 +198,9 @@ packages:
     peerDependencies:
       hono: ^4
 
+  '@openpanel/sdk@1.0.0':
+    resolution: {integrity: sha512-FNmmfjdXoC/VHEjA+WkrQ4lyM5lxEmV7xDd57uj4E+lIS0sU3DLG2mV/dpS8AscnZbUvuMn3kPhiLCqYzuv/gg==}
+
   '@types/node@24.2.1':
     resolution: {integrity: sha512-DRh5K+ka5eJic8CjH7td8QpYEV6Zo10gfRkjHCO3weqZHWDtAaSTFtl4+VMqOJ4N5jcuhZ9/l+yy8rVgw7BQeQ==}
 
@@ -323,6 +329,8 @@ snapshots:
   '@hono/node-server@1.18.1(hono@4.9.0)':
     dependencies:
       hono: 4.9.0
+
+  '@openpanel/sdk@1.0.0': {}
 
   '@types/node@24.2.1':
     dependencies:

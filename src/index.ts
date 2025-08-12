@@ -2,9 +2,15 @@ import 'dotenv/config'
 
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
+import { OpenPanel } from '@openpanel/sdk'
 import userConfig from '../config.js'
 
 const app = new Hono()
+
+const op = new OpenPanel({
+  clientId: process.env.OPENPANEL_CLIENT_ID!,
+  clientSecret: process.env.OPENPANEL_CLIENT_SECRET,
+})
 
 app.get('/', c => {
   const ce = (tag: string, attr?: string | null, children?: string | null) =>
@@ -48,11 +54,16 @@ app.get('/', c => {
       ),
     ].join(''),
   )
+
+  op.track('visit_root')
+
   return c.html(html)
 })
 
 userConfig.redirects.forEach(r => {
   app.all(r.from, c => {
+    op.track('redirect', { ...r })
+
     return c.redirect(r.to, r.permanent ? 301 : undefined)
   })
 })
