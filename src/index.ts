@@ -1,12 +1,10 @@
+import 'dotenv/config'
+
 import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
-import userConfig from '../config'
+import { serve } from '@hono/node-server'
+import userConfig from '../config.js'
 
-export const config = {
-  runtime: 'edge',
-}
-
-const app = new Hono().basePath('/')
+const app = new Hono()
 
 app.get('/', c => {
   const ce = (tag: string, attr?: string | null, children?: string | null) =>
@@ -33,7 +31,7 @@ app.get('/', c => {
     'footer',
     null,
     [
-      ce('p', null, '© 2024 Mr. Will'),
+      ce('p', null, '© 2024–' + new Date().getFullYear() + ' Mr. Will'),
       ce(
         'p',
         null,
@@ -59,4 +57,16 @@ userConfig.redirects.forEach(r => {
   })
 })
 
-export default handle(app)
+if (process.env.VERCEL !== '1') {
+  serve(
+    {
+      fetch: app.fetch,
+      port: 3000,
+    },
+    info => {
+      console.log(`Server is running on http://localhost:${info.port}`)
+    },
+  )
+}
+
+export default app
