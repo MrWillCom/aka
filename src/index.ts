@@ -3,6 +3,7 @@ import 'dotenv/config'
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
 import { OpenPanel } from '@openpanel/sdk'
+import { waitUntil } from '@vercel/functions'
 import userConfig from '../config.js'
 
 const app = new Hono()
@@ -55,14 +56,14 @@ app.get('/', c => {
     ].join(''),
   )
 
-  op.track('visit_root')
+  waitUntil(op.track('visit_root'))
 
   return c.html(html)
 })
 
 userConfig.redirects.forEach(r => {
   app.all(r.from, c => {
-    op.track('redirect', { ...r })
+    waitUntil(op.track('redirect', { ...r }))
 
     return c.redirect(r.to, r.permanent ? 301 : undefined)
   })
