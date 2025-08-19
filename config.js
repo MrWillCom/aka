@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/ctw',
+      to: 'https://github.com/MrWillCom/copy-this-way',
+    },
+    {
       from: '/2024a2z',
       to: 'https://blog.mrwillcom.com/2025/03/04/2024-browser-from-a-to-z/',
     },
