@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/mhpr',
+      to: 'https://blog.mrwillcom.com/2025/09/28/My-Home-Page-Reimagined/',
+    },
+    {
       from: '/ctw',
       to: 'https://github.com/MrWillCom/copy-this-way',
     },
