@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/tailwind',
+      to: 'https://blog.mrwillcom.com/2026/01/09/Tailwind-as-a-Headwind/',
+    },
+    {
       from: '/mhpr',
       to: 'https://blog.mrwillcom.com/2025/09/28/My-Home-Page-Reimagined/',
     },
