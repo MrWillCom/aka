@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/vernal-debut',
+      to: 'https://blog.mrwillcom.com/2026/03/20/announcing-vernal/',
+    },
+    {
       from: '/2025',
       to: 'https://blog.mrwillcom.com/2026/01/25/review-2025/',
     },
