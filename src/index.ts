@@ -26,11 +26,7 @@ app.get('/', c => {
     null,
     userConfig.redirects
       .map(r =>
-        ce(
-          'li',
-          null,
-          ce('a', `href="${r.from}"`, ce('pre', null, `${r.from} -> ${r.to}`)),
-        ),
+        ce('li', null, ce('a', `href="${r.from}"`, ce('pre', null, `${r.from} -> ${r.to}`))),
       )
       .join(''),
   )
@@ -43,11 +39,7 @@ app.get('/', c => {
         'p',
         null,
         [
-          ce(
-            'a',
-            'href="https://github.com/MrWillCom/aka" target="_blank"',
-            'Source Code',
-          ),
+          ce('a', 'href="https://github.com/MrWillCom/aka" target="_blank"', 'Source Code'),
           '<br />',
           'Powered by ',
           ce('a', 'href="https://hono.dev/" target="_blank"', 'Hono'),

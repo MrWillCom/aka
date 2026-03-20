@@ -5,7 +5,8 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "format": "prettier . --write"
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.11",
@@ -16,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "prettier": "3.8.1",
+    "oxfmt": "^0.41.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
