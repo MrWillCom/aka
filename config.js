@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/shrug-post',
+      to: 'https://blog.mrwillcom.com/2026/05/27/shrug/',
+    },
+    {
       from: '/vernal-debut',
       to: 'https://blog.mrwillcom.com/2026/03/20/announcing-vernal/',
     },
