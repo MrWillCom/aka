@@ -1,6 +1,10 @@
 const config = {
   redirects: [
     {
+      from: '/ama',
+      to: 'https://fediqb.y-zu.org/questionbox/@mrwillcom@gts.mrwillcom.com',
+    },
+    {
       from: '/shrug-post',
       to: 'https://blog.mrwillcom.com/2026/05/27/shrug/',
     },
